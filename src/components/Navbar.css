@@ -1,0 +1,79 @@
+/* Custom Class for all transitions */
+.transition-300 {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+}
+
+/* --- Default State (Before Scrolling) --- */
+.navbar-light {
+    background-color: transparent !important; /* Start transparent */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-light .nav-link {
+    color: rgba(0, 0, 0, 0.7) !important; /* Slightly lighter text color */
+}
+
+.navbar-light .navbar-brand {
+    color: #212529 !important; /* Brand color */
+}
+
+
+/* --- Scrolled State (After Scrolling 100px) --- */
+.navbar-scrolled {
+    background-color: #ffffff !important; /* Solid White */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow lift */
+    border-bottom: none;
+}
+
+.navbar-scrolled .nav-link {
+    color: #212529 !important; /* Dark text on white background */
+}
+
+.navbar-scrolled .nav-link:hover {
+    color: #0d6efd !important; /* Blue hover */
+}
+
+/* --- Brand/Logo Styling --- */
+.letter-spacing-1 {
+    letter-spacing: 0.1em;
+}
+
+/* Bootstrap Primary Color */
+.text-primary {
+    color: #0d6efd !important; 
+}
+
+/* --- Navigation Link Hover Effect (Underline) --- */
+.navbar .nav-link {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d6efd; 
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover::after {
+    width: 80%;
+}
+
+/* --- Mobile Responsiveness Cleanup (Toggler) --- */
+@media (max-width: 991.98px) {
+    /* Mobile Menu always uses the solid background for readability */
+    .navbar:not(.navbar-scrolled) .navbar-collapse,
+    .navbar-scrolled .navbar-collapse {
+        background-color: #ffffff; 
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+}

@@ -1,0 +1,208 @@
+/* --- GLOBAL VARIABLES & RESET --- */
+:root {
+  --bg-dark: #12161f; /* Deepest background color */
+  --accent: #1affc6; /* Techy Cyan/Mint (Secondary Accent) */
+  --primary: #0d6efd; /* Bootstrap Blue (Primary Accent) */
+}
+
+/* Global Fix for Horizontal Overflow (Crucial for responsiveness) */
+body {
+    overflow-x: hidden; 
+}
+
+/* Custom Transition Utility */
+.transition-300 {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Custom Text Colors */
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--accent) !important; }
+
+
+
+
+.hero {
+  /* Using 100dvh for best mobile viewport compatibility */
+  min-height: 100dvh; 
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2233 100%);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 4rem 1rem; /* Added padding */
+  position: relative;
+  overflow: hidden;
+  color: #fff; /* Default text color */
+}
+
+/* CONTENT CONTAINER */
+.hero-content {
+  max-width: 720px;
+  padding: 0 1rem;
+}
+
+/* TEXT */
+.hero-eyebrow {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 8vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(26, 255, 198, 0.2); /* Subtle glow */
+}
+
+/* BUTTONS */
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.btn-primary, .btn-outline {
+  padding: 0.9rem 2.2rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg-dark); /* Dark text on light button */
+  border: 2px solid var(--accent);
+  box-shadow: 0 8px 25px rgba(26, 255, 198, 0.4); 
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 12px 30px rgba(26, 255, 198, 0.6);
+}
+
+.btn-outline {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: #fff;
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: rgba(26, 255, 198, 0.1);
+}
+
+/* SCROLL ICON */
+.hero-scroll {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent);
+}
+
+.hero-scroll:hover {
+    color: var(--primary);
+}
+
+/* HERO RESPONSIVENESS */
+@media (max-width: 768px) {
+  .hero-title {
+      font-size: 3rem; /* Smaller title on mobile */
+  }
+  
+  .hero-actions {
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: center;
+  }
+  .hero-actions a {
+      width: 90%;
+      max-width: 300px;
+  }
+}
+
+/* ====================================
+   NAVBAR STYLES
+   ==================================== */
+
+/* Custom Initial State (Before Scroll) */
+.navbar-custom-initial {
+    background-color: rgba(18, 20, 24, 0.95) !important; 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1050; 
+}
+
+/* Scrolled State (Optional: Use if you want a subtle change) */
+.navbar-scrolled {
+    background-color: var(--bg-dark) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+/* Navigation Links */
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important; 
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Hover Underline Effect */
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent); /* Techy Cyan Underline */
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+    color: #ffffff !important; 
+}
+
+.navbar .nav-link:hover::after {
+    width: 80%;
+}
+
+/* NAV RESPONSIVENESS FIXES */
+@media (max-width: 991.98px) {
+    /* Mobile Menu always uses a solid background for readability */
+    #navCollapse {
+        background-color: var(--bg-dark); 
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Remove horizontal spacing on collapsed menu */
+    .navbar-nav {
+        margin-left: 0 !important; 
+        padding-left: 0 !important;
+        gap: 0;
+    }
+
+    /* Remove underline effect on mobile for cleaner stacking */
+    .navbar .nav-link::after {
+        display: none;
+    }
+
+    /* Toggler button fix */
+    .navbar-toggler {
+        /* Ensures the toggler is visible on the dark background */
+        color: white; 
+    }
+}
