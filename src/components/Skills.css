@@ -1,0 +1,82 @@
+/* --- SKILLS SECTION STYLES --- */
+.skills-section {
+    background-color: var(--bg-dark);
+    padding: 100px 0;
+    position: relative;
+}
+
+.skill-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px; /* Matching the Hero Photo roundedness */
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon Styling */
+.skill-icon-wrapper {
+    color: var(--accent);
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 0 8px rgba(26, 255, 198, 0.2));
+}
+
+.skill-name {
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.4s ease;
+}
+
+/* Hover States */
+.skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.skill-card:hover .skill-icon-wrapper {
+    color: #fff;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 12px var(--accent));
+}
+
+.skill-card:hover .skill-name {
+    color: #fff;
+}
+
+/* Background Animated Glow */
+.skill-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 0.6s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.skill-card:hover .skill-glow {
+    width: 200px;
+    height: 200px;
+    opacity: 0.1;
+}
+
+/* Section Title Highlight */
+.section-title span {
+    color: var(--accent);
+    text-shadow: 0 0 15px rgba(26, 255, 198, 0.3);
+}

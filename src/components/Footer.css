@@ -1,0 +1,77 @@
+/* --- FOOTER SECTION STYLES --- */
+.footer-section {
+    background-color: var(--bg-dark);
+    padding: 60px 0 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+/* Subtle Neon Line at Top */
+.footer-section::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.scroll-top-btn {
+    background: transparent;
+    border: 1px solid rgba(26, 255, 198, 0.3);
+    color: var(--accent);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-top-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(26, 255, 198, 0.4);
+    transform: translateY(-5px);
+}
+
+.footer-social-link {
+    color: var(--text-muted);
+    margin: 0 15px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social-link:hover {
+    color: var(--accent);
+    filter: drop-shadow(0 0 5px var(--accent));
+}
+
+.footer-copyright {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.footer-motto {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.text-accent {
+    color: var(--accent);
+}

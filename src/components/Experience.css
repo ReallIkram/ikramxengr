@@ -1,0 +1,101 @@
+/* --- EXPERIENCE SECTION STYLES --- */
+.experience-section {
+    background-color: var(--bg-dark);
+    padding: 100px 0;
+    position: relative;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* The Vertical Glow Line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent), var(--primary), transparent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/* The Glowing Dot */
+.timeline-dot {
+    position: absolute;
+    left: -41px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-dark);
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+    z-index: 2;
+}
+
+/* Experience Card Styling */
+.experience-card {
+    background: rgba(18, 18, 18, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.role-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.text-accent {
+    color: var(--accent) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.badge-period {
+    background: rgba(26, 255, 198, 0.1);
+    color: var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(26, 255, 198, 0.2);
+}
+
+.experience-desc {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Tech Tags */
+.tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    margin-right: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Effect */
+.experience-card:hover {
+    border-color: var(--accent);
+    transform: translateX(10px);
+    background: rgba(26, 255, 198, 0.02);
+}

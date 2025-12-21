@@ -1,79 +1,87 @@
-/* Custom Class for all transitions */
-.transition-300 {
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+/* --- THE HUD NAVBAR --- */
+.navbar {
+    z-index: 10000 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Default State (Before Scrolling) --- */
-.navbar-light {
-    background-color: transparent !important; /* Start transparent */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.navbar-custom-initial {
+    background-color: transparent !important;
+    padding: 1.5rem 0;
 }
 
-.navbar-light .nav-link {
-    color: rgba(0, 0, 0, 0.7) !important; /* Slightly lighter text color */
-}
-
-.navbar-light .navbar-brand {
-    color: #212529 !important; /* Brand color */
-}
-
-
-/* --- Scrolled State (After Scrolling 100px) --- */
 .navbar-scrolled {
-    background-color: #ffffff !important; /* Solid White */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow lift */
-    border-bottom: none;
+    background-color: rgba(10, 10, 10, 0.9) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(26, 255, 198, 0.3);
+    padding: 0.8rem 0;
 }
 
-.navbar-scrolled .nav-link {
-    color: #212529 !important; /* Dark text on white background */
+/* --- BRAND VISIBILITY (The Fix) --- */
+.brand-hud {
+    display: flex !important;
+    align-items: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-decoration: none !important;
 }
 
-.navbar-scrolled .nav-link:hover {
-    color: #0d6efd !important; /* Blue hover */
+.brand-name-text {
+    color: #ffffff !important; /* Forced Solid White */
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+    margin: 0 8px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-/* --- Brand/Logo Styling --- */
-.letter-spacing-1 {
-    letter-spacing: 0.1em;
+.accent-code {
+    color: var(--accent) !important; /* #1affc6 */
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px var(--accent);
 }
 
-/* Bootstrap Primary Color */
-.text-primary {
-    color: #0d6efd !important; 
+/* --- NAV LINKS --- */
+.nav-link-cyber {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* --- Navigation Link Hover Effect (Underline) --- */
-.navbar .nav-link {
-    position: relative;
-    padding-bottom: 0.5rem;
+.nav-link-cyber:hover {
+    color: var(--accent) !important;
+    text-shadow: 0 0 8px var(--accent);
 }
 
-.navbar .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0; 
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #0d6efd; 
-    transition: width 0.3s ease-in-out;
+/* --- HIRE ME BUTTON --- */
+.nav-cta-pill {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent) !important;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.navbar .nav-link:hover::after {
-    width: 80%;
+.nav-cta-pill:hover {
+    background: var(--accent);
+    color: var(--bg-dark) !important;
+    box-shadow: 0 0 20px var(--accent);
 }
 
-/* --- Mobile Responsiveness Cleanup (Toggler) --- */
-@media (max-width: 991.98px) {
-    /* Mobile Menu always uses the solid background for readability */
-    .navbar:not(.navbar-scrolled) .navbar-collapse,
-    .navbar-scrolled .navbar-collapse {
-        background-color: #ffffff; 
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+/* --- CUSTOM MOBILE ICON --- */
+.custom-toggler {
+    border: 1px solid var(--accent) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231affc6' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }

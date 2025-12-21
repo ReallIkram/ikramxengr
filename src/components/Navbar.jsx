@@ -1,58 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import './Hero.css'; // Using the same CSS file for shared variables
+import './Navbar.css';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const navItems = ['About', 'Skills', 'Experience', 'Projects', 'Contact'];
+  const navItems = ['About', 'Skills', 'Experience', 'Education', 'Projects', 'Services', 'Testimonials'];
 
-  // Effect to track scrolling
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    // Conditional class: 'navbar-scrolled' is added after 100px of scrolling
-    <nav 
-      className={`navbar navbar-expand-lg fixed-top py-3 transition-300 ${scrolled ? 'navbar-scrolled' : 'navbar-custom-initial'}`}
-    >
-      <div className="container-fluid px-lg-5"> 
-        
-        {/* Brand */}
-        <a className="navbar-brand fs-4 fw-light" href="#hero">
-          <span className="text-primary">&lt;</span>IKRAM ULLAH<span className="text-primary">/&gt;</span>
+    <nav className={`navbar navbar-expand-lg fixed-top transition-300 ${scrolled ? 'navbar-scrolled' : 'navbar-custom-initial'}`} data-bs-theme="dark">
+      <div className="container"> 
+        <a className="navbar-brand brand-hud" href="#hero">
+          <span className="accent-code">&lt;</span>
+          <span className="brand-name-text">IKRAM ULLAH</span>
+          <span className="accent-code">/&gt;</span>
         </a>
         
-        <button 
-          className="navbar-toggler border-0 shadow-none" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navCollapse"
-          aria-controls="navCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button className="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div id="navCollapse" className="collapse navbar-collapse">
-          <ul className="navbar-nav ms-auto gap-3"> 
+          <ul className="navbar-nav ms-auto align-items-center gap-2"> 
             {navItems.map(item => (
               <li className="nav-item" key={item}> 
-                <a 
-                  className="nav-link text-uppercase fw-semibold py-2 px-3 transition-300" 
-                  href={`#${item.toLowerCase()}`}
-                >
-                  {item}
-                </a>
+                <a className="nav-link nav-link-cyber" href={`#${item.toLowerCase()}`}>{item}</a>
               </li>
             ))}
+            <li className="nav-item ms-lg-3">
+              <a className="nav-cta-pill" href="#contact">Hire Me</a>
+            </li>
           </ul>
         </div>
       </div>
