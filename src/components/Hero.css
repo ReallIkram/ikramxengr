@@ -58,12 +58,6 @@ body {
   padding-bottom: 80px;
 }
 
-/* CONTENT CONTAINER */
-/* .hero-content {
-  /* Removed max-width and margin auto so it fills the left column */
-/* } */ */
-
-/* TEXT */
 .hero-eyebrow {
   color: var(--primary);
   text-transform: uppercase;
