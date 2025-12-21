@@ -1,0 +1,73 @@
+.about-section {
+  /* Exact same variable as Hero for a seamless transition */
+  background-color: var(--bg-dark); 
+  padding: 100px 0;
+  color: #fff;
+  position: relative;
+}
+
+/* Header consistency */
+.about-section h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-faded {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* --- STAT BOXES --- */
+.stats-box h3 {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.stats-box small {
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* --- FEATURE CARDS --- */
+.about-card {
+  background: var(--bg-card); /* Lighter gray to pop against the black background */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.about-card:hover {
+  transform: translateY(-8px); /* Move UP on hover for a pro look */
+  background: #1a1a1a;
+  border-color: var(--primary);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.about-card-icon {
+  color: var(--accent);
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+/* The middle card highlight */
+.accent-border {
+  border: 1px solid rgba(26, 255, 198, 0.2) !important;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 991px) {
+  .about-section {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .about-card {
+    text-align: left;
+  }
+}
