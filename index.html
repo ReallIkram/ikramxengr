@@ -2,47 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/assets/IkramUllah.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/src/assets/IkramUllah.jpg" />
+    <link rel="apple-touch-icon" href="/src/assets/IkramUllah.jpg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Ikram Inayat's official portfolio website. Frontend developer showcasing projects, skills, and contact information.">
-    <meta name="keywords" content="Ikram Inayat, Ikram Ullah, frontend developer, portfolio, web developer, software developer">
-    <meta name="author" content="Ikram Inayat">
+    <!-- Primary SEO -->
+    <title>Ikram Inayat (Ikram Ullah) | Frontend Developer Portfolio</title>
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Ikram Inayat | Frontend Developer & Portfolio" />
-    <meta property="og:description" content="Portfolio of Ikram Inayat, Frontend Developer. Explore projects, skills, and contact information." />
+    <meta
+      name="description"
+      content="Official portfolio of Ikram Inayat, also known as Ikram Ullah. Frontend Developer showcasing projects, skills, GitHub, and LinkedIn profile."
+    />
+
+    <meta
+      name="keywords"
+      content="Ikram Inayat, Ikram Ullah, Ikram, Frontend Developer, Web Developer, Software Engineer, GitHub IKRAM-ULLAH-4"
+    />
+
+    <meta name="author" content="Ikram Inayat" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ikraminayat.me" />
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Ikram Inayat | Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Explore the portfolio of Ikram Inayat (Ikram Ullah), a Frontend Developer. View projects, skills, GitHub, and LinkedIn."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ikram-inayat.me" />
-    <meta property="og:image" content="https://ikram-inayat.me/preview.png" /> <!-- optional preview image -->
+    <meta property="og:url" content="https://ikraminayat.me" />
+    <meta property="og:image" content="https://ikraminayat.me/preview.png" />
 
-    <!-- Title -->
-    <title>Ikram Inayat | Frontend Developer & Portfolio</title>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ikram Inayat | Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Ikram Inayat (Ikram Ullah). Frontend Developer."
+    />
+    <meta name="twitter:image" content="https://ikraminayat.me/preview.png" />
 
-    <!-- Structured Data for Google (Person Schema) -->
+    <!-- Structured Data: Person -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Ikram Inayat",
-      "alternateName": "Ikram Ullah",
-      "url": "https://ikram-inayat.me",
+      "alternateName": [
+        "Ikram Ullah",
+        "Ikram"
+      ],
+      "url": "https://ikraminayat.me",
+      "image": "https://ikraminayat.me/preview.png",
+      "jobTitle": "Frontend Developer",
       "sameAs": [
-        "https://linkedin.com/in/ikram-ullah-416b74232",
+        "https://www.linkedin.com/in/ikram-ullah-416b74232/",
         "https://github.com/IKRAM-ULLAH-4"
       ],
-      "jobTitle": "Frontend Developer",
-      "description": "Ikram Inayat (also known as Ikram Ullah) is a frontend developer specializing in modern web development and portfolio projects."
+      "description": "Ikram Inayat (also known as Ikram Ullah) is a Frontend Developer specializing in modern web applications."
     }
     </script>
   </head>
 
   <body>
-    <!-- Optional: Add H1 for better SEO -->
-    <!-- <h1>Ikram Inayat</h1>
-    <p>Frontend Developer | Portfolio: <a href="https://ikram-inayat.me">https://ikram-inayat.me</a></p> -->
-
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
