@@ -21,7 +21,7 @@ export default function App() {
       <Education />
       {/* <Certifications /> */}
       <Services />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
       <Footer />
     </>
