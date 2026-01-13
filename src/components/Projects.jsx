@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, X, ChevronRight, Layers } from 'lucide-react';
+import { ExternalLink, Github, X, ChevronRight, Layers, Monitor } from 'lucide-react';
 import './Projects.css';
 
 const Projects = () => {
@@ -12,10 +12,9 @@ const Projects = () => {
       category: "Full Stack",
       shortDesc: "Real-time communication platform with low-latency architecture.",
       longDesc: "A sophisticated real-time chatting application leveraging Socket.io for fluid user experiences. Designed with a focus on secure data handling and a responsive UI that adapts to any device.",
-      image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?q=80&w=2070&auto=format&fit=crop", 
-      stack: ["React", "Node.js", "Socket.io", "Tailwind CSS"],
       liveLink: "https://web-interaction-system.vercel.app/", 
-      githubLink: "https://github.com/IKRAM-ULLAH-4/Web-Interaction-System.git"
+      githubLink: "https://github.com/IKRAM-ULLAH-4/Web-Interaction-System.git",
+      stack: ["React", "Node.js", "Socket.io", "Tailwind CSS"],
     }
   ];
 
@@ -23,7 +22,7 @@ const Projects = () => {
     <section id="projects" className="projects-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"50px"}}>Portfolio</p>
+          <p className="hero-eyebrow" style={{fontSize:"40px"}}>Portfolio</p>
           <h2 className="section-title">Selected <span>Works</span></h2>
         </div>
 
@@ -32,7 +31,11 @@ const Projects = () => {
             <div className="col-lg-4 col-md-6" key={project.id}>
               <div className="project-card transition-300" onClick={() => setActiveProject(project)}>
                 <div className="project-img-container">
-                  <img src={project.image} alt={project.title} className="project-img" />
+                  {/* LIVE PREVIEW REPLACING IMAGE */}
+                  <div className="live-preview-wrapper">
+                    <iframe src={project.liveLink} title="Card Preview" className="preview-iframe" scrolling="no" />
+                    <div className="iframe-shield"></div>
+                  </div>
                   <div className="project-hover-overlay">
                     <span className="btn-view-details">Explore Case Study <ChevronRight size={18} /></span>
                   </div>
@@ -45,7 +48,7 @@ const Projects = () => {
                   <h4 className="project-name">{project.title}</h4>
                   <p className="project-desc-short">{project.shortDesc}</p>
                   <div className="card-stack-mini">
-                    {project.stack.slice(0, 3).map(s => <span key={s}>#{s}</span>)}
+                    {project.stack.slice(0, 3).map(s => <span key={s}>{s}</span>)}
                   </div>
                 </div>
               </div>
@@ -54,23 +57,24 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* --- REFINED MODAL --- */}
+      {/* --- PREVIOUS MODAL STRUCTURE (RESTORED) --- */}
       {activeProject && (
         <div className="project-modal-overlay" onClick={() => setActiveProject(null)}>
           <div className="project-modal-content" onClick={e => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setActiveProject(null)}><X size={24} /></button>
             
             <div className="row g-0 h-100">
-              <div className="col-lg-7 overflow-hidden bg-black d-flex align-items-center">
-                <img src={activeProject.image} alt={activeProject.title} className="modal-main-img" />
+              <div className="col-lg-7 bg-black overflow-hidden">
+                {/* LIVE PREVIEW REPLACING MODAL IMAGE */}
+                <div className="modal-preview-wrapper">
+                  <iframe src={activeProject.liveLink} title="Modal Preview" className="modal-iframe" />
+                </div>
               </div>
               <div className="col-lg-5 modal-text-side">
                 <div className="modal-inner-padding">
                   <span className="project-category-badge">{activeProject.category}</span>
                   <h2 className="modal-title">{activeProject.title}</h2>
-                  
                   <div className="divider-neon"></div>
-                  
                   <p className="modal-desc">{activeProject.longDesc}</p>
                   
                   <div className="stack-container-label">Technologies Used</div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCode, FaCube, FaShieldAlt } from 'react-icons/fa'; // Icons for tech pillars
+import { FaCode, FaCube, FaShieldAlt } from 'react-icons/fa';
 import './About.css';
 
 function About() {
@@ -15,23 +15,25 @@ function About() {
               Engineering <span className="text-secondary">Scalable</span> & Secure Solutions
             </h2>
             <p className="lead text-white-50 mb-4">
-              I am a Graduate Software Engineering student specializing in the bridge between 
-              traditional high-performance systems and the decentralized future of Web3.
+              I am currently enrolled as a Software Engineering student at COMSATS University 
+              (2023 – 2027), specializing in building the bridge between traditional high-performance 
+              systems and the decentralized future of Web3.
             </p>
-            <p className="text-white-50 mb-5">
-              My approach focuses on clean, modular code. I don't just build apps; I architect 
-              systems that are ready for massive user growth and complex blockchain integrations.
-            </p>
+            {/* <p className="text-white-50 mb-5">
+              My approach focuses on clean, modular code. I don’t just build applications; I architect 
+              systems designed for scalability, security, and long-term growth, with readiness for 
+              complex blockchain integrations.
+            </p> */}
             
             {/* Quick Stats/Highlights */}
             <div className="d-flex align-items-center stats-row">
               <div className="stats-box me-4">
                 <h3 className="text-secondary fw-bold mb-0">Web3</h3>
-                <small className="text-uppercase text-white-50">Specialist</small>
+                <small className="text-uppercase text-white-50">Focus Area</small>
               </div>
               <div className="stats-box border-start ps-4">
                 <h3 className="text-primary fw-bold mb-0">Full-Stack</h3>
-                <small className="text-uppercase text-white-50">Expertise</small>
+                <small className="text-uppercase text-white-50">Development</small>
               </div>
             </div>
           </div>
@@ -46,7 +48,10 @@ function About() {
                     <FaCode className="about-card-icon me-3" />
                     <div>
                       <h5 className="text-white fw-bold">Clean Code Architecture</h5>
-                      <p className="text-white-50 mb-0 small">Writing maintainable, enterprise-grade code that scales with your business needs.</p>
+                      <p className="text-white-50 mb-0 small">
+                        Writing maintainable, production-ready code that scales with real-world 
+                        system demands.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -58,7 +63,10 @@ function About() {
                     <FaCube className="about-card-icon me-3" />
                     <div>
                       <h5 className="text-white fw-bold">Blockchain & Smart Contracts</h5>
-                      <p className="text-white-50 mb-0 small">Developing secure Solidity contracts and dApps with a focus on gas optimization.</p>
+                      <p className="text-white-50 mb-0 small">
+                        Developing secure Solidity smart contracts and decentralized applications 
+                        with an emphasis on efficiency and gas optimization.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -70,7 +78,10 @@ function About() {
                     <FaShieldAlt className="about-card-icon me-3" />
                     <div>
                       <h5 className="text-white fw-bold">System Reliability</h5>
-                      <p className="text-white-50 mb-0 small">Prioritizing security and high availability in every system I design.</p>
+                      <p className="text-white-50 mb-0 small">
+                        Designing systems with security, reliability, and high availability as 
+                        first-class priorities.
+                      </p>
                     </div>
                   </div>
                 </div>

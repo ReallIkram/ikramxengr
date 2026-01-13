@@ -17,7 +17,7 @@ const Contact = () => {
     <section id="contact" className="contact-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"50px"}}>Get In Touch</p>
+          <p className="hero-eyebrow" style={{fontSize:"40px"}}>Get In Touch</p>
           <h2 className="section-title">Let's Build <span>Something</span></h2>
         </div>
 
@@ -63,8 +63,8 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="social-links-footer mt-5 d-flex justify-content-center gap-4">
-              <a href="#" className="social-icon"><Github /></a>
-              <a href="#" className="social-icon"><Linkedin /></a>
+              <a href="https://github.com/IKRAM-ULLAH-4" className="social-icon"><Github /></a>
+              <a href="https://www.linkedin.com/in/ikram-ullah-416b74232/" className="social-icon"><Linkedin /></a>
               <a href="mailto:ikrambtm444@gmail.com" className="social-icon"><Mail /></a>
             </div>
           </div>

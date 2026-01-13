@@ -28,7 +28,7 @@ const Services = () => {
     <section id="services" className="services-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"50px"}}>Solutions</p>
+          <p className="hero-eyebrow" style={{fontSize:"40px"}}>Solutions</p>
           <h2 className="section-title">Technical <span>Offerings</span></h2>
         </div>
 

@@ -23,7 +23,7 @@ const Testimonials = () => {
     <section id="testimonials" className="testimonials-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"50px"}}>Social Proof</p>
+          <p className="hero-eyebrow" style={{fontSize:"40px"}}>Social Proof</p>
           <h2 className="section-title">Client <span>Feedback</span></h2>
         </div>
 
