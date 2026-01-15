@@ -13,7 +13,7 @@
   overflow: hidden;
   cursor: pointer;
   height: 100%;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
@@ -27,19 +27,32 @@
   background: #000;
 }
 
-/* LIVE PREVIEW (DESKTOP ONLY) */
+/* ===========================
+   LIVE PREVIEW (CARD – PERFECT COVER)
+=========================== */
 .live-preview-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
+  overflow: hidden;
+  background: #000;
 }
 
+/* DESKTOP WEBSITE CANVAS */
 .preview-iframe {
-  width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 1440px;
   height: 900px;
+
   border: none;
-  transform: scale(0.35);
-  transform-origin: 0 0;
+
+  /* behaves like object-fit: cover */
+  transform: translate(-50%, -50%) scale(0.38);
+  transform-origin: center;
+
   pointer-events: none;
 }
 
@@ -50,10 +63,13 @@
 }
 
 .project-card:hover .preview-iframe {
-  filter: brightness(0.3) blur(2px);
+  filter: brightness(0.35) blur(2px);
+  transition: 0.3s;
 }
 
-/* CARD CONTENT */
+/* ===========================
+   CARD CONTENT
+=========================== */
 .project-content {
   padding: 25px;
 }
@@ -87,7 +103,7 @@
 }
 
 /* ===========================
-   MODAL (DESKTOP BASE)
+   MODAL (DESKTOP)
 =========================== */
 .project-modal-overlay {
   position: fixed;
@@ -126,7 +142,7 @@
   border: none;
 }
 
-/* TEXT SIDE */
+/* MODAL TEXT */
 .modal-text-side {
   background: #161616;
   display: flex;
@@ -232,29 +248,21 @@
 }
 
 /* ===========================
-   ULTRA MOBILE (360–420px)
+   MOBILE (CARD + MODAL)
 =========================== */
 @media (max-width: 576px) {
 
   /* CARD */
   .project-img-container {
     height: 160px;
-    background: linear-gradient(135deg,#141e30,#243b55);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
+  /* MOBILE WEBSITE PREVIEW (COVER FIX) */
   .preview-iframe {
-    /* display: none; */
-  }
-
-  .project-img-container::after {
-    content: "View Project";
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    opacity: 0.9;
+    width: 390px;
+    height: 844px; /* real phone viewport */
+    transform: translate(-50%, -50%) scale(0.5);
+    transform-origin: center;
   }
 
   /* MODAL → BOTTOM SHEET */
@@ -264,13 +272,13 @@
   }
 
   .project-modal-content {
-    height: 90vh;
-    max-height: 90vh;
-    border-radius: 20px 20px 0 0;
-    animation: slideUp 0.35s ease-out;
+    height: 55vh;
+    max-height: 55vh;
+    border-radius: 18px 18px 0 0;
+    animation: slideUpHalf 0.3s ease-out;
   }
 
-  @keyframes slideUp {
+  @keyframes slideUpHalf {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
   }
@@ -281,55 +289,55 @@
   }
 
   .modal-preview-wrapper {
-    height: 170px;
+    height: 200px;
     flex-shrink: 0;
   }
 
   .modal-text-side {
     flex: 1;
-    padding-bottom: 85px;
+    overflow-y: auto;
+    padding-bottom: 70px;
   }
 
   .modal-inner-padding {
-    padding: 20px;
+    padding: 16px;
   }
 
   .modal-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .modal-desc {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .stack-tag {
-    font-size: 0.75rem;
-    padding: 6px 10px;
+    font-size: 0.7rem;
+    padding: 5px 8px;
   }
 
-  /* STICKY ACTION BAR */
   .modal-footer-actions {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background: #111;
-    padding: 12px;
-    gap: 10px;
+    padding: 10px;
+    gap: 8px;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
 
   .action-btn-primary,
   .action-btn-outline {
-    font-size: 0.9rem;
-    padding: 12px;
+    font-size: 0.85rem;
+    padding: 10px;
   }
 
   .modal-close {
-    top: 8px;
-    right: 8px;
-    width: 38px;
-    height: 38px;
+    top: 6px;
+    right: 6px;
+    width: 34px;
+    height: 34px;
   }
 }
