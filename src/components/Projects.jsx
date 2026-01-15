@@ -12,7 +12,7 @@ const Projects = () => {
       category: "Full Stack",
       shortDesc: "Real-time communication platform with low-latency architecture.",
       longDesc: "A sophisticated real-time chatting application leveraging Socket.io for fluid user experiences. Designed with a focus on secure data handling and a responsive UI that adapts to any device.",
-      liveLink: "https://web-interaction-system.vercel.app/", 
+      liveLink: "https://kwick-web-interaction.vercel.app/", 
       githubLink: "https://github.com/IKRAM-ULLAH-4/Web-Interaction-System.git",
       stack: ["React", "Node.js", "Socket.io", "Tailwind CSS"],
     }
