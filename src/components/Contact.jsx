@@ -17,7 +17,7 @@ const Contact = () => {
     <section id="contact" className="contact-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"40px"}}>Get In Touch</p>
+          <p className="hero-eyebrow" style={{fontSize:"20px"}}>Get In Touch</p>
           <h2 className="section-title">Let's Build <span>Something</span></h2>
         </div>
 

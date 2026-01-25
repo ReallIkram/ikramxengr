@@ -22,7 +22,7 @@ const Projects = () => {
     <section id="projects" className="projects-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"40px"}}>Portfolio</p>
+          <p className="hero-eyebrow" style={{fontSize:"20px"}}>Portfolio</p>
           <h2 className="section-title">Selected <span>Works</span></h2>
         </div>
 

@@ -7,7 +7,7 @@ function Education() {
     <section id="education" className="education-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"40px"}}>Academic Foundation</p>
+          <p className="hero-eyebrow" style={{fontSize:"20px"}}>Academic Foundation</p>
           <h2 className="section-title">My <span>Education</span></h2>
         </div>
 

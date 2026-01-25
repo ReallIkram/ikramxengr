@@ -16,7 +16,7 @@ const Experience = () => {
     <section id="experience" className="experience-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow"style={{fontSize:"40px"}}>Career Path</p>
+          <p className="hero-eyebrow"style={{fontSize:"20px"}}>Career Path</p>
           <h2 className="section-title">My <span>Experience</span></h2>
         </div>
 

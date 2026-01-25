@@ -27,7 +27,7 @@ const Skills = () => {
     <section id="skills" className="skills-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"40px"}}>Expertise</p>
+          <p className="hero-eyebrow" style={{fontSize:"20px"}}>Expertise</p>
           <h2 className="section-title">Technical <span>Toolkit</span></h2>
         </div>
         
