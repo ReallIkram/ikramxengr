@@ -56,7 +56,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <button type="submit" className="cyber-btn w-100">
-                  Initialize Transmission <Send size={18} className="ms-2" />
+                  Send <Send size={18} className="ms-2" />
                 </button>
               </form>
             </div>

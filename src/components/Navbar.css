@@ -45,12 +45,32 @@
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* Underline effect */
+.nav-link-cyber::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link-cyber:hover::after,
+.nav-link-cyber.active::after {
+  width: 100%;
 }
 
 .nav-link-cyber:hover {
   color: var(--accent) !important;
 }
 
+/* CTA Pill */
 .nav-cta-pill {
   background: transparent;
   border: 1px solid var(--accent);
@@ -112,6 +132,10 @@
     width: 100%;
     margin-top: 14px;
     padding: 14px 0;
+  }
+
+  .nav-link-cyber::after {
+    display: none; /* Remove underline effect on mobile for simplicity */
   }
 }
 

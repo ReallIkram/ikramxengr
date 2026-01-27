@@ -12,7 +12,7 @@ export default function Hero() {
           
           <div className="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
             <div className="hero-content">
-              <p className="hero-eyebrow animate__animated animate__fadeInDown" style={{fontSize:"20px"}}>
+              <p className="hero-eyebrow animate__animated animate__fadeInDown" style={{fontSize:"30px"}}>
                 Hi, I'm Ikram Ullah
               </p>
 

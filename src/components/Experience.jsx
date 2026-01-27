@@ -1,23 +1,32 @@
 import React from 'react';
 import './Experience.css';
+
 const Experience = () => {
   const experiences = [
     {
-      role: 'Intern / Junior Developer',
-      company: 'KWIS - knowledge Web Innovative Soln.', // Example company
-      period: '2024 – Present',
-      description: 'Worked on web apps, APIs, and blockchain experiments using React and Solidity.',
-      tags: ['React', 'Node.js', 'Web3']
+      role: 'Software Engineering Student',
+      company: 'COMSATS University',
+      period: '2023 – Present',
+      description:
+        'Currently pursuing a Bachelor’s degree in Software Engineering. Gaining hands-on experience through academic projects focused on full-stack development, real-time systems, and mobile application development.',
+      tags: ['Programming Fundamentals', 'Data Structures', 'OOP','Web Technologies' , 'Mobile Application Development' , 'AI' ,   'Databases', 'Software Engineering']
     },
-    // You can add more objects here later
+    {
+      role: 'Academic Project Developer',
+      company: 'University & Self-Driven Projects',
+      period: '2024 – Present',
+      description:
+        'Worked on multiple academic-level and personal projects including a real-time chat application using MERN stack, Flutter mobile apps, and Firebase-based systems. These projects focus on practical implementation, scalability, and modern development practices.',
+      tags: ['React', 'Node.js', 'Flutter', 'Firebase', 'MongoDB']
+    }
   ];
 
   return (
     <section id="experience" className="experience-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow"style={{fontSize:"20px"}}>Career Path</p>
-          <h2 className="section-title">My <span>Experience</span></h2>
+          <p className="hero-eyebrow" style={{ fontSize: "20px" }}>My Background</p>
+          <h2 className="section-title">Academic & <span>Project Experience</span></h2>
         </div>
 
         <div className="timeline-container">
@@ -32,10 +41,8 @@ const Experience = () => {
                   </div>
                   <span className="badge-period">{exp.period}</span>
                 </div>
-                
-                <p className="experience-desc mt-3">
-                  {exp.description}
-                </p>
+
+                <p className="experience-desc mt-3">{exp.description}</p>
 
                 <div className="experience-tags mt-3">
                   {exp.tags.map(tag => (

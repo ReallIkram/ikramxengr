@@ -9,9 +9,11 @@ import Services from './components/Services'
 import Testimonials   from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { ThemeProvider } from './Context/ThemeContext';
 export default function App() {
   return (
     <>
+    <ThemeProvider> 
     <Navbar />
       <Hero />
       <About />
@@ -24,6 +26,8 @@ export default function App() {
       {/* <Testimonials /> */}
       <Contact />
       <Footer />
+
+      </ThemeProvider>  
     </>
   );
 }

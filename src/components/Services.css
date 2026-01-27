@@ -98,3 +98,8 @@
     z-index: -1;
     user-select: none;
 }
+@media (max-width: 991px) {
+  .service-card {
+    padding: 30px;
+  }
+}

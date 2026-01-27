@@ -6,8 +6,9 @@ import {
   Layers, 
   Database, 
   Coffee, 
-  ShieldCheck, 
-  Layout 
+  Layout,
+  Smartphone,
+  GitBranch
 } from 'lucide-react';
 import './Skills.css';
 
@@ -19,18 +20,23 @@ const Skills = () => {
     { name: 'React', icon: <Layers size={24} /> },
     { name: 'Node.js', icon: <Cpu size={24} /> },
     { name: 'Java', icon: <Coffee size={24} /> },
-    { name: 'Solidity', icon: <ShieldCheck size={24} /> },
-    { name: 'Bootstrap', icon: <Database size={24} /> },
+    { name: 'MongoDB', icon: <Database size={24} /> },
+    { name: 'Flutter', icon: <Smartphone size={24} /> },
+    { name: 'Firebase', icon: <Database size={24} /> },
+    { name: 'Git', icon: <GitBranch size={24} /> },
+    { name: 'Bootstrap', icon: <Layout size={24} /> }
   ];
 
   return (
     <section id="skills" className="skills-section">
       <div className="container">
         <div className="section-header text-center mb-5">
-          <p className="hero-eyebrow" style={{fontSize:"20px"}}>Expertise</p>
-          <h2 className="section-title">Technical <span>Toolkit</span></h2>
+          <p className="hero-eyebrow" style={{ fontSize: "20px" }}>Expertise</p>
+          <h2 className="section-title">
+            Technical <span>Toolkit</span>
+          </h2>
         </div>
-        
+
         <div className="row g-4 justify-content-center">
           {skills.map((skill) => (
             <div className="col-lg-3 col-md-4 col-6" key={skill.name}>
