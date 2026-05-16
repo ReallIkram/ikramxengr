@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "animate.css";
 
 createRoot(document.getElementById('root')).render(
+  
   <StrictMode>
     <App />
   </StrictMode>,

@@ -1,33 +1,22 @@
-import Navbar from './components/Navbar';
-import Hero from './components/HeroSection'
-import About from './components/About'
-import Skills from './components/Skills'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Education from './components/Education'
-import Services from './components/Services'
-import Testimonials   from './components/Testimonials'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import { ThemeProvider } from './Context/ThemeContext';
-export default function App() {
-  return (
-    <>
-    <ThemeProvider> 
-    <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Education />
-      {/* <Certifications /> */}
-      <Services />
-      {/* <Testimonials /> */}
-      <Contact />
-      <Footer />
 
-      </ThemeProvider>  
-    </>
-  );
+import React from 'react'
+import Home from './pages/Home'
+
+import { RouterProvider } from 'react-router-dom'
+import { routes } from './routes/routes'
+import { ThemeProvider } from './Context/ThemeContext'
+
+function App() {
+  return (
+<ThemeProvider>
+
+
+<RouterProvider router={routes} >
+   <Home />
+</RouterProvider>
+     
+</ThemeProvider>
+  )
 }
+
+export default App

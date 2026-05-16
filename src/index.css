@@ -1,68 +1,268 @@
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ==========================================================================
+   1. GLOBAL VARIABLES & SYSTEM RESETS
+   ========================================================================== */
+:root {
+  --transition-smooth: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Force smooth, elegant theme shifts across all basic elements */
+html, body, nav, section, .card, .btn, .progress, .badge, h1, h2, h3, h4, p, span, a, input, img {
+  transition: var(--transition-smooth) !important;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Typography Utility Details */
+.style-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.fs-7 {
+  font-size: 0.825rem !important;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Micro-Interaction Animation Utilities */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 3rem rgba(25, 135, 84, 0.175) !important; /* Bootstrap success glow */
+}
+
+.text-hover-success:hover {
+  color: #198754 !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   2. GLOBAL THEME overrides (Fixes Bootstrap Utility Inheritance)
+   ========================================================================== */
+
+/* GLOBAL LIGHT MODE RULES */
+.bg-light, body:not(:has(.bg-dark)) {
+  background-color: #f8f9fa !important;
+  color: #121212 !important;
+}
+
+/* GLOBAL DARK MODE RULES */
+.bg-dark, body:has(.bg-dark) {
+  background-color: #121212 !important;
+  color: #f8f9fa !important;
+}
+
+/* ==========================================================================
+   3. NAVBAR COMPONENT FINE-TUNING
+   ========================================================================== */
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1020;
+}
+
+/* ==========================================================================
+   4. HERO COMPONENT GRAPHICS
+   ========================================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
-  a:hover {
-    color: #747bff;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+.dynamic-fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.blur-3xl {
+  filter: blur(64px);
+}
+
+/* ==========================================================================
+   5. SKILLS SECTION CONFIGURATIONS
+   ========================================================================== */
+.hover-lift-card {
+  transition: var(--transition-smooth) !important;
+}
+
+.hover-lift-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Custom background layers for cards dynamically overriding Bootstrap flags */
+.bg-light .card, :not(.bg-dark) .card {
+  background-color: #ffffff !important;
+  border-color: #e9ecef !important;
+}
+
+.bg-dark .card {
+  background-color: #1a1d20 !important;
+  border-color: #2d3238 !important;
+}
+
+/* ==========================================================================
+   6. PROJECTS COMPONENT (Window System, Overlay & Modal)
+   ========================================================================== */
+.project-window-header {
+  height: 220px;
+  position: relative;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Clean UI styling for the minimalist placeholder dots */
+.dot.bg-danger { background-color: #ff5f56 !important; }
+.dot.bg-warning { background-color: #ffbd2e !important; }
+.dot.bg-success { background-color: #27c93f !important; }
+
+/* The clean interactive cover mask layer */
+.portfolio-card-overlay {
+  background-color: rgba(25, 135, 84, 0.92); /* Rich emerald theme matching your navbar layout */
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.portfolio-custom-card:hover .portfolio-card-overlay {
+  opacity: 1;
+}
+
+/* MODAL CONFIGURATIONS */
+.portfolio-modal-wrapper {
+  z-index: 1060;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Custom internal container setup for case study overlay frames */
+.portfolio-modal-container {
+  max-width: 1100px;
+  height: 85vh;
+}
+
+/* Entrance Animations */
+@keyframes fadeInQuick {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in-quick {
+  animation: fadeInQuick 0.2s ease-out forwards;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
   }
-} */
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-scale-up {
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Prevents background underlying body layout shift when browsing a modal project */
+body:has(.portfolio-modal-wrapper) {
+  overflow: hidden !important;
+}
+/* ==========================================================================
+   7. CONTACT SECTION CONFIGURATIONS & INTERACTIVE STATES
+   ========================================================================== */
+
+/* Align form input fields with the inner project window styling values */
+.portfolio-form-input {
+  transition: var(--transition-smooth) !important;
+}
+
+.portfolio-form-input:focus {
+  border-color: #198754 !important;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15) !important;
+}
+
+/* Ensure placeholder alignment color matching rules look great in dark modes */
+.bg-dark .portfolio-form-input::placeholder {
+  color: #6c757d !important;
+  opacity: 0.7;
+}
+
+.bg-light .portfolio-form-input::placeholder {
+  color: #adb5bd !important;
+}
+
+/* Scroll-based WhatsApp visibility system */
+.contact-whatsapp-fab {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.3s ease, 
+              visibility 0.3s ease !important;
+}
+
+/* Hidden state: Positioned out of frame and hidden from assistive viewports */
+.fab-concealed {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.6) translateY(50px);
+  pointer-events: none;
+}
+
+/* Active state: Visible with smooth entry animation */
+.fab-active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+  animation: fabPulseGlow 2s infinite;
+}
+
+/* Pulse animation system definition */
+@keyframes fabPulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.contact-whatsapp-fab:hover {
+  transform: scale(1.1) translateY(-4px) !important;
+  background-color: #1ebd56 !important;
+}
+/* ==========================================================================
+   9. ABOUT ME LAYOUT OVERRIDES AND CORE EXTENSIONS
+   ========================================================================== */
+.bg-dark-soft {
+  background-color: #1a1d20 !important;
+}
+
+.bg-light-soft {
+  background-color: #f1f3f5 !important;
+}
+
+/* Standard animation utility for clean cards entries */
+.animate-fade-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Ensure clean paragraph spacing values inside about structures */
+.max-w-2xl {
+  max-width: 42rem;
+}
