@@ -3,6 +3,8 @@ import Typewriter from "typewriter-effect";
 import { FaGithub, FaLinkedin, FaArrowRight, FaCode, FaDownload } from "react-icons/fa";
 import { useTheme } from "../Context/ThemeContext";
 import heroImage from "../assets/IkramUllah.jpg";
+import IkramPhoto from '../assets/IkramPhoto.jpeg'
+import IkramO from '../assets/IkramO.png'
 
 function Hero() {
   const { bg } = useTheme() || { bg: false };
@@ -105,7 +107,7 @@ function Hero() {
             />
 
             <img
-              src={heroImage}
+              src={IkramO}
               alt="profile"
               className={`img-fluid rounded-4 shadow-lg border ${
                 bg ? "border-secondary" : "border-white"

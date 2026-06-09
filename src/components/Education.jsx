@@ -64,7 +64,7 @@ function Education() {
                       bg ? "text-white border border-secondary" : "text-dark bg-light border"
                     }`}>
                       <Calendar size={14} className="text-success me-1" />
-                      Sep 2023 — Present
+                      Sep 2023 - Present
                     </span>
 
                   </div>
