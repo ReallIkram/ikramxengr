@@ -1,22 +1,13 @@
-
-import React from 'react'
-import Home from './pages/Home'
-
-import { RouterProvider } from 'react-router-dom'
-import { routes } from './routes/routes'
-import { ThemeProvider } from './Context/ThemeContext'
+import { RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "./Context/ThemeContext";
+import { routes } from "./routes/routes";
 
 function App() {
   return (
-<ThemeProvider>
-
-
-<RouterProvider router={routes} >
-   <Home />
-</RouterProvider>
-     
-</ThemeProvider>
-  )
+    <ThemeProvider>
+      <RouterProvider router={routes} />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
