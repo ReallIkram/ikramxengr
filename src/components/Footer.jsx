@@ -44,7 +44,7 @@ const Footer = () => {
           {/* SOCIAL LINKS ARCHITECTURE */}
           <div className="col-12 col-md-4 d-flex justify-content-center gap-3">
             <a 
-              href="https://github.com/IKRAM-ULLAH-4" 
+              href="https://github.com/ReallIkram" 
               target="_blank" 
               rel="noreferrer"
               className={`p-2.5 rounded-circle d-flex align-items-center justify-content-center text-decoration-none transition-all footer-social-icon ${

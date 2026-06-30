@@ -84,7 +84,7 @@ function Hero() {
 
             {/* SOCIAL */}
             <div className="d-flex align-items-center justify-content-center justify-content-lg-start gap-4">
-              <a href="https://github.com/IKRAM-ULLAH-4 " className={bg ? "text-white-50" : "text-dark"} target="_blank">
+              <a href="https://github.com/ReallIkram" className={bg ? "text-white-50" : "text-dark"} target="_blank">
                 <FaGithub size={22} />
               </a>
               <a href="https://www.linkedin.com/in/ikram-ullah-416b74232?utm_source=share_via&utm_content=profile&utm_medium=member_android" className={bg ? "text-white-50" : "text-dark"} target="_blank">
